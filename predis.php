@@ -33,7 +33,7 @@ $redis->rpush($list, "Symfony 2");
 $redis->rpush($list, "Symfony 1.4");
 $redis->lpush($list, "Zend Framework");
 
-echo "Number of frameworks in list: " . $redis->llen($list) . "<br>";
+//echo "Number of frameworks in list: " . $redis->llen($list) . "<br>";
 
 $arList = $redis->lrange($list, 0, -1);
 echo "<pre>";
