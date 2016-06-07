@@ -55,9 +55,9 @@
 
             <h2>Session Started</h2>
 
-            <div id="client-publisher-div-wrapper"><div id="publisher-div"><p><span id="pub-msg"><blink>Starting Camera...</blink></span></p></div></div>
+            <div id="client-publisher-div-wrapper"><div id="publisher-div"><p id="pub-msg"><blink>Starting Camera...</blink></p></div></div>
             
-            <div id="client-subscriber-div-wrapper"><div id="subscriber-div"><p><span id="sub-msg"><blink>Waiting for response...</blink></span></p></div></div>
+            <div id="client-subscriber-div-wrapper"><div id="subscriber-div"><p id="sub-msg"><blink>Waiting for response...</blink></p></div></div>
 
         </div>
     </div>
