@@ -67,7 +67,7 @@ function loadClient(){
 
         if(clientName =="" || sessionId == "")
         {
-            alert("Plaese Select a Client form the list first");
+            alert("No Client has been selected.");
             //$('#msg-bar').text('Plaese Select a Client form the list first. ');
             return false;
         }
@@ -79,7 +79,8 @@ function loadClient(){
         success: function(objResponse){
                 if(objResponse) {
                    token = objResponse;
-                   setImmediate(startSession()); 
+                   startSession()
+                   //setImmediate(startSession()); 
                 }
                 else{
                     alert("Can't start session");
@@ -128,6 +129,8 @@ function startSession(){
     if (error) {
         
         alert("Error connecting: ", error.code, error.message);
+        $('#msg-bar').text('Error Connecting');
+        $('blink').text('');
         
     } else {
         
