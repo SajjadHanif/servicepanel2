@@ -4,7 +4,7 @@
     
     define(API_SECRET,"ef909bf2fde9464daf9e9d293aeec7cff251ad7d");
     
-    require "../vendor/predis/autoload.php";
+    require "./vendor/predis/autoload.php";
     Predis\Autoloader::register();
 
     try {
