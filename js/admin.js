@@ -56,7 +56,7 @@ function loadClientList(){
 
 function loadClientData(client_name, session_id){
     
-        clientName  = client_Name;
+        clientName  = client_name;
         sessionId   = session_id;
         $('#msg-bar').text(clientName+' Selected.');
         alert(clientName+"has been selected sessionID:"+sessionId);

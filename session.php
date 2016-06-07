@@ -21,7 +21,9 @@
 
     $token = $opentok->generateToken($sessionId);
     
-    print_r($token);
+    print_r($sessionId," : ",API_KEY," : ",API_SECRET);
+    
+    //print_r($token);
     
     exit;
 
