@@ -17,13 +17,13 @@
 
     //echo "SessionID: ".$sessionId." Token: ".$token;exit;
 
-    $opentok = new OpenTok("45591762", "ef909bf2fde9464daf9e9d293aeec7cff251ad7d");
+    $opentok = new OpenTok(API_KEY, API_SECRET);
 
     $token = $opentok->generateToken($sessionId);
     
-    print_r($sessionId);
+    //print_r($sessionId);
     
-    //print_r($token);
+    print_r($token);
     
     exit;
 
