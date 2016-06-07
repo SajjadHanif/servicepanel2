@@ -60,6 +60,6 @@ $redis->hset("ClientList","Client4","868");
 
 $redis->hset("ClientList","Client5","878");
 
-$clientList = $redis->hgetall("ClientList","Client1");
+$clientList = $redis->hgetall("ClientList");
 
 print_r($clientList);
