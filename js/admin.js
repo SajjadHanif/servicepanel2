@@ -156,10 +156,10 @@ function removeClient()
         data: "clientName:"+clientName,
         url: "../RemoveClient.php",
         success: function(objResponse){
-                //alert(objResponse);
+                alert(objResponse);
                 clientName   = "";
                 sessionId    = "";
-                return;
+                return true;
         }
 
     });
