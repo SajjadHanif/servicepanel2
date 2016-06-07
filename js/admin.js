@@ -79,6 +79,7 @@ function loadClient(){
         success: function(objResponse){
                 if(objResponse) {
                    token = objResponse;
+                   alert(token);
                    startSession()
                    //setImmediate(startSession()); 
                 }
