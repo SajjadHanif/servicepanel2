@@ -62,5 +62,4 @@
 
 <script src="../js/admin.js"></script>
 <script src="../js/vendor/setImmediate.js"></script>
-
 </html>
