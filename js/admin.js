@@ -154,9 +154,9 @@ function removeClient()
         $.ajax({
         type: "GET",
         data: "clientName:"+clientName,
-        url: "../RemoveClient.php",
+        url: "../removeclient.php",
         success: function(objResponse){
-                alert(objResponse);
+                //alert(objResponse);
                 clientName   = "";
                 sessionId    = "";
                 return true;
