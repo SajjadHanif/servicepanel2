@@ -52,4 +52,12 @@ echo $redis->lpop($list) . "<br>";*/
 
 $redis->hset("ClientList","Client1","123");
 
-echo $redis->hget("ClientList","Client1");
+$redis->hset("ClientList","Client2","357");
+
+$redis->hset("ClientList","Client3","656");
+
+$redis->hset("ClientList","Client4","868");
+
+$redis->hset("ClientList","Client5","878");
+
+echo $redis->hgetall("ClientList","Client1");
