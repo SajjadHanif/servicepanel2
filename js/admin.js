@@ -59,7 +59,7 @@ function loadClientData(client_name, session_id){
         clientName  = client_name;
         sessionId   = session_id;
         $('#msg-bar').text(clientName+' Selected.');
-        alert(clientName+"has been selected sessionID:"+sessionId);
+        //alert(clientName+"has been selected sessionID:"+sessionId);
         return;
 
 }
@@ -79,9 +79,9 @@ function loadClient(){
         success: function(objResponse){
                 if(objResponse) {
                    token = objResponse;
-                   alert(token);
-                   startSession();
-                   //setImmediate(startSession()); 
+                   //alert(token);
+                   //startSession();
+                   setImmediate(startSession()); 
                 }
                 else{
                     alert("Can't start session");
@@ -110,7 +110,7 @@ function startSession(){
     });
     session.on("streamDestroyed", function(event) {
         
-        alert(event.stream.name+" has left the session.");
+        alert("Client Disconnected.");
         
         removeClient();
         
@@ -143,7 +143,7 @@ function startSession(){
     
     session.on("sessionDisconnected", function(event){
 
-        $('#msg-bar').text('Session ended with '+event.stream.name);
+        $('#msg-bar').text('Session ended with '+clientName);
         
         $('blink').text('');
         

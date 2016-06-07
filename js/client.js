@@ -43,9 +43,9 @@ function startSession(){
     });
     session.on("streamDestroyed", function(event) {
         
-        alert("Session with admin ended.");
+        alert("Session Disconnected.");
         
-        $('#sub-msg').text("Session with admin ended");
+        $('#sub-msg').text("Session Disconnected.");
     });
 
     session.connect(token,function(error) {
