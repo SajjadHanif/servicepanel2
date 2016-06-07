@@ -145,9 +145,7 @@ function startSession(){
 
         $('#msg-bar').text('Session ended with '+clientName);
         
-        $('blink').text('');
-        
-        //alert("You have been disconnected from this session.");
+        //$('blink').text('');
 
         //document.location.reload(true);
 
@@ -179,10 +177,10 @@ function removeClient()
             return false;
         }
 
-     removeClient();
-
      session.disconnect();
-  
+     
+     removeClient();
+ 
 }
 
 
