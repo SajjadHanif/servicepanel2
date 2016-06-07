@@ -1,13 +1,13 @@
 <?php
 
-    require("servicepanel.php");
+    require("config/config.php");
 
-    //$clientList = ServicePanel::getClientList();
+    $clientList = $redis->hgetall(ClientList);
 
-    //$jsonClientList = json_encode($clientList);
-
-   var_dump(apcu_fetch('clientList'));
+    $jsonClientList = json_encode($clientList);
    
-   //print_r(apcu_cache_info());
+   print_r($clientList);
+   
+   print_r($jsonClientList);
 
 ?>

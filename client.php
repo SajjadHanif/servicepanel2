@@ -1,8 +1,7 @@
 
 <?php
 
-    require_once ("servicepanel.php");
-    require("config.php");
+    require("config/config.php");
     require "vendor/autoload.php";
     
     use OpenTok\OpenTok;
@@ -17,14 +16,7 @@
     
     $token = $opentok->generateToken($sessionID);
     
-    //ServicePanel::addClient($clientName, $sessionID);
-    
-    $client = $clientName.":".$sessionID;
-    
-    apcu_store("ClientList", $client);
-    
-    var_dump(apcu_fetch('clientList'));
-    
+    $redis->hset(ClientList,$clientName,$sessionID);
 ?>
 
 <!DOCTYPE html>
