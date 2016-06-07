@@ -1,14 +1,9 @@
 <?php
     
-    session_start();
-    
     require "vendor/autoload.php";
+    require("config/config.php");
 
     use OpenTok\OpenTok;
-
-    $apiKey = "45591762";
-
-    $apiSecret = "ef909bf2fde9464daf9e9d293aeec7cff251ad7d";
     
     foreach ($_REQUEST as $key=>$value){
         
@@ -22,7 +17,7 @@
 
     //echo "SessionID: ".$sessionId." Token: ".$token;exit;
 
-    $opentok = new OpenTok($apiKey, $apiSecret);
+    $opentok = new OpenTok(API_KEY, API_SECRET);
 
     $token = $opentok->generateToken($sessionId);
     

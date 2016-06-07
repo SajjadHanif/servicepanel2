@@ -10,7 +10,7 @@ function loadClientList(){
         $.ajax({
         type: "GET",
         data: "clientList",
-        url: "../clientlist.php",
+        url: "./clientlist.php",
         success: function(objResponse){
                 if(objResponse) {
                     //alert("list: "+objResponse);
@@ -19,15 +19,18 @@ function loadClientList(){
                     $.each(userList, function(key,value)
                     {
                         var li = $('<li/>')
-                            .attr('role', 'menuitem')
                             .appendTo(cList);
                         var aaa = $('<a/>')
                             .text(key)
                             .attr('id', key)
+                    
                             .click(function(){ 
+                                
                             loadClientData(key, value); 
                             $(this).css('background','#4B545F');
+                            
                             })
+                            
                             .appendTo(li);
                     });
                     if(clientName!="")
@@ -56,7 +59,7 @@ function loadClientData(client_Name, session_Id){
         clientName  = client_Name;
         sessionId   = session_Id;
         $('#msg-bar').text(clientName+' Selected.');
-        //alert(clientName+"has been selected");
+        alert(clientName+"has been selected sessionID:"+sessionId);
         return;
 
 }
@@ -72,7 +75,7 @@ function loadClient(){
         $.ajax({
         type: "GET",
         data: "clientName:"+clientName+"&sessionID:"+sessionId,
-        url: "../session.php",
+        url: "./session.php",
         success: function(objResponse){
                 if(objResponse) {
                    token = objResponse;
@@ -107,7 +110,7 @@ function startSession(){
     });
     session.on("streamDestroyed", function(event) {
         
-        alert("The client has left the session.");
+        alert(event.stream.name+" has left the session.");
         
         removeClient();
         
@@ -138,7 +141,7 @@ function startSession(){
     
     session.on("sessionDisconnected", function(event){
 
-        $('#msg-bar').text('Session with client ended.');
+        $('#msg-bar').text('Session ended with '+event.stream.name);
         
         $('blink').text('');
         
@@ -154,7 +157,7 @@ function removeClient()
         $.ajax({
         type: "GET",
         data: "clientName:"+clientName,
-        url: "../removeclient.php",
+        url: "./removeclient.php",
         success: function(objResponse){
                 //alert(objResponse);
                 clientName   = "";
