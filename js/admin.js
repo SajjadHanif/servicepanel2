@@ -13,7 +13,7 @@ function loadClientList(){
         url: "../clientlist.php",
         success: function(objResponse){
                 if(objResponse) {
-                    alert("list: "+objResponse);
+                    //alert("list: "+objResponse);
                     var userList = JSON.parse(objResponse);
                     var cList = $('ul');
                     $.each(userList, function(key,value)
