@@ -1,6 +1,6 @@
 <?php
 
-    require("config/config.php");
+    //require("config/config.php");
     require "vendor/autoload.php";
 
     use OpenTok\OpenTok;
@@ -17,7 +17,7 @@
 
     //echo "SessionID: ".$sessionId." Token: ".$token;exit;
 
-    $opentok = new OpenTok(API_KEY, API_SECRET);
+    $opentok = new OpenTok(45591762, "ef909bf2fde9464daf9e9d293aeec7cff251ad7d");
 
     $token = $opentok->generateToken($sessionId);
     
