@@ -80,7 +80,7 @@ function loadClient(){
                 if(objResponse) {
                    token = objResponse;
                    alert(token);
-                   startSession()
+                   startSession();
                    //setImmediate(startSession()); 
                 }
                 else{
