@@ -1,9 +1,7 @@
 <?php
 
-    require("servicepanel.php");
+    require("config/config.php");
 
-    $clientList = ServicePanel::getClientList();
-    
     foreach ($_REQUEST as $key=>$value){
         
         $arr[] = explode(':',$key);
@@ -12,7 +10,7 @@
 
     $clientName = $arr[0][1];
     
-    $result = ServicePanel::removeClient($clientName);
+    $result = $redis->hdel("ClientList",$clientName);
         
     if($result){
     
