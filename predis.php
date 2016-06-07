@@ -25,7 +25,7 @@ try {
     'password' => parse_url($_ENV['REDISCLOUD_URL'], PHP_URL_PASS),
 ));
 
-    echo "Successfully connected to Redis";
+    echo "Successfully connected to Redis<br/>";
 }
 catch (Exception $e) {
     echo "Couldn't connected to Redis";
@@ -60,6 +60,8 @@ $redis->hset("ClientList","Client4","868");
 
 $redis->hset("ClientList","Client5","878");
 
-$clientList = $redis->hgetall("ClientList");
+$redis->hdel(ClientList,Client3);
+
+$clientList = $redis->hgetall(ClientList);
 
 print_r($clientList);
