@@ -43,9 +43,9 @@ function startSession(){
     });
     session.on("streamDestroyed", function(event) {
         
-        alert("The admin has left the session");
+        alert("Session with admin ended.");
         
-        $('#sub-msg').text("The admin has left the session");
+        $('#sub-msg').text("Session with admin ended");
     });
 
     session.connect(token,function(error) {
@@ -63,7 +63,9 @@ function startSession(){
 
     session.on("sessionDisconnected", function(event){
 
-        alert("You have been disconnected from this session.");
+        alert("Session Disconnected.");
+        
+        $('#sub-msg').text("Session Disconnected");
 
     });
 
