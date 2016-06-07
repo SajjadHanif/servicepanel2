@@ -50,7 +50,7 @@ echo $redis->rpop($list) . "<br>";
 // the first entry in the list
 echo $redis->lpop($list) . "<br>";*/
 
-$redis->hset("ClientList","Client1","123");
+/*$redis->hset("ClientList","Client1","123");
 
 $redis->hset("ClientList","Client2","357");
 
@@ -58,9 +58,15 @@ $redis->hset("ClientList","Client3","656");
 
 $redis->hset("ClientList","Client4","868");
 
-$redis->hset("ClientList","Client5","878");
+$redis->hset("ClientList","Client5","878");*/
+
+$redis->hdel(ClientList,Client2);
 
 $redis->hdel(ClientList,Client3);
+
+$redis->hdel(ClientList,Client4);
+
+$redis->hdel(ClientList,Client5);
 
 $clientList = $redis->hgetall(ClientList);
 

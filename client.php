@@ -16,7 +16,7 @@
     
     $token = $opentok->generateToken($sessionID);
     
-    $redis->hset(ClientList,$clientName,$sessionID);
+    $redis->hset("ClientList",$clientName,$sessionID);
 ?>
 
 <!DOCTYPE html>
