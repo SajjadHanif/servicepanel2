@@ -10,7 +10,7 @@ function loadClientList(){
         $.ajax({
         type: "GET",
         data: "clientList",
-        url: "./clientlist.php",
+        url: "../clientlist.php",
         success: function(objResponse){
                 if(objResponse) {
                     //alert("list: "+objResponse);
@@ -75,7 +75,7 @@ function loadClient(){
         $.ajax({
         type: "GET",
         data: "clientName:"+clientName+"&sessionID:"+sessionId,
-        url: "./session.php",
+        url: "../session.php",
         success: function(objResponse){
                 if(objResponse) {
                    token = objResponse;
@@ -155,7 +155,7 @@ function removeClient()
         $.ajax({
         type: "GET",
         data: "clientName:"+clientName,
-        url: "./removeclient.php",
+        url: "../removeclient.php",
         success: function(objResponse){
                 //alert(objResponse);
                 clientName   = "";
