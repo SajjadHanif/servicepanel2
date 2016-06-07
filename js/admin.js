@@ -143,7 +143,7 @@ function startSession(){
     
     session.on("sessionDisconnected", function(event){
 
-        $('#msg-bar').text('Session ended with '+clientName);
+        $('#msg-bar').text('Session Ended.');
         
         //$('blink').text('');
 
