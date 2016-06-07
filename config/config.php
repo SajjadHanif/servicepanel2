@@ -17,7 +17,7 @@
         'password' => parse_url($_ENV['REDISCLOUD_URL'], PHP_URL_PASS),
     ));
 
-        echo "Successfully connected to Redis<br/>";
+        //echo "Successfully connected to Redis<br/>";
     }
     catch (Exception $e) {
         echo "Couldn't connected to Redis";
